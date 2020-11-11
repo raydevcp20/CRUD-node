@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Cadastro</title>
+    <style> label{color: teal; font-size:18px;}</style>
+</head>
+<body style="background-color: #75FCA1">
+
+    <div class="container">
+        <h1>Cadastro</h1><br>
+
+        <form action="/alunos" method="post">
+            <input type="hidden" name="id" value="${data.id}">
+            <label>Nome: </label><br>
+            <input type="text" name="nome" value = "${data.nome}"><br>
+            <label>Email: </label><br>
+            <input type="email" name="email" value = "${data.email}"><br>
+
+            <label>Escolha seu curso: </label>
+            <p>
+                <label> 
+                    <input name="curso" type="radio" value="ADS" checked="${data.curso == 'ADS'}"/>
+                    <span>Análise e Desenvolvimento de Sistemas</span>
+                </label>
+            </p>
+            <p>
+                <label> 
+                    <input name="curso" type="radio" value="Qualidade" checked="${data.curso == 'Qualidade'}"/>
+                    <span>Tec. em Qualidade</span>
+                </label>
+            </p>
+            <p>
+                <label> 
+                    <input name="curso" type="radio" value="IPI" checked="${data.curso == 'IPI'}"/>
+                    <span>Tec. em Informática para Internet</span>
+                </label>
+            </p>
+            <br>
+            <a style="margin-right: 15px" class="waves-effect waves-light btn" href="/">Cancelar</a>
+            <button class="waves-effect waves-light btn" type="submit">Enviar</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
